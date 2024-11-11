@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-img_path = 'para.jpg'
+img_path = 'para.png'
 image = cv2.imread(img_path)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 gaus = cv2.GaussianBlur(gray, (3, 3), 0)
