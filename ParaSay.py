@@ -7,7 +7,7 @@ img_path = 'para.png'
 image = cv2.imread(img_path)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 gaus = cv2.GaussianBlur(gray, (5, 5), 0)
-_, thresh = cv2.threshold(gaus, 190, 255, cv2.THRESH_BINARY_INV)
+_, thresh = cv2.threshold(gaus, 200, 255, cv2.THRESH_BINARY_INV)
 
 kernel = np.ones((5, 5), np.uint8)
 morph = cv2.dilate(thresh, kernel, iterations=7)
