@@ -1,3 +1,4 @@
+import argparse
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
@@ -5,11 +6,11 @@ import matplotlib.pyplot as plt
 img_path = 'para.png'
 image = cv2.imread(img_path)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-gaus = cv2.GaussianBlur(gray, (3, 3), 0)
-_, thresh = cv2.threshold(gaus, 150, 255, cv2.THRESH_BINARY_INV)
+gaus = cv2.GaussianBlur(gray, (5, 5), 0)
+_, thresh = cv2.threshold(gaus, 190, 255, cv2.THRESH_BINARY_INV)
 
-kernel = np.ones((3, 3), np.uint8)
-morph = cv2.dilate(thresh, kernel, iterations=5)
+kernel = np.ones((5, 5), np.uint8)
+morph = cv2.dilate(thresh, kernel, iterations=7)
 morph = cv2.erode(morph, kernel, iterations=5)
 
 contours, _ = cv2.findContours(morph, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
