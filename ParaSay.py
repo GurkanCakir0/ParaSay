@@ -48,26 +48,26 @@ for cnt in contours:
         cv2.putText(image, label, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
 
 
-fig, axes = plt.subplots(1, 5, figsize=(20, 10))
+fig, axes = plt.subplots(2, 3, figsize=(20, 10))
 
-axes[0].imshow(cv2.cvtColor(gray, cv2.COLOR_BGR2RGB))
-axes[0].set_title("Gray Image")
-axes[0].axis("off")
+axes[0, 0].imshow(cv2.cvtColor(gray, cv2.COLOR_BGR2RGB))
+axes[0, 0].set_title("Gray Image")
+axes[0, 0].axis("off")
 
-axes[1].imshow(cv2.cvtColor(gaus, cv2.COLOR_BGR2RGB))
-axes[1].set_title("Gaus Image")
-axes[1].axis("off")
+axes[0, 1].imshow(cv2.cvtColor(gaus, cv2.COLOR_BGR2RGB))
+axes[0, 1].set_title("Gaus Image")
+axes[0, 1].axis("off")
 
-axes[2].imshow(cv2.cvtColor(thresh, cv2.COLOR_BGR2RGB))
-axes[2].set_title("Thresh Image")
-axes[2].axis("off")
+axes[0, 2].imshow(cv2.cvtColor(thresh, cv2.COLOR_BGR2RGB))
+axes[0, 2].set_title("Thresh Image")
+axes[0, 2].axis("off")
 
-axes[3].imshow(cv2.cvtColor(morph, cv2.COLOR_BGR2RGB))
-axes[3].set_title("Morphological Image")
-axes[3].axis("off")
+axes[1, 0].imshow(cv2.cvtColor(morph, cv2.COLOR_BGR2RGB))
+axes[1, 0].set_title("Morphological Image")
+axes[1, 0].axis("off")
 
-axes[4].imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
-axes[4].set_title(f'Para Miktarı: {say}')
-axes[4].axis("off")
+axes[1, 1].imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+axes[1, 1].set_title(f'Para Miktarı: {say}')
+axes[1, 1].axis("off")
 
 plt.show()
